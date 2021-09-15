@@ -165,8 +165,7 @@ function InitStartState() {
     
     InitTitle(-1, -1);
     InitStart();
-    MKTxt("13", 414, 300, sm);
-    MKTxt("by alex delderfield for js  k", 196, 300, sm);
+    MKTxt("by alex delderfield for js13k", 196, 300, sm);
     //InitTxtObj("numbers   0123456789", 136, 250, sm);
 
     //generate falling stars
@@ -185,7 +184,6 @@ function InitSetupState() {
     MKSqr(30, 30, canvas.width-60, canvas.height-60, '#444');
     MKBt(500, 250, 95, 32, '#666', 2, "drop")
     MKTxt("setup for subspace drop", 30, 40, sm);
-    MKTxt("connection active", 450, 40, sm);
     
     MKTxt("set id", 28, 100, md);
     MKTxt("xxx", 140, 100, md);
@@ -193,9 +191,6 @@ function InitSetupState() {
     MKTxt("set sector", 28, 140, md);
     MKTxt("00", 230, 140, md);
 }
-
-
-
     
 // if(fstLog) {
 //     fstLog = false; 

@@ -97,11 +97,11 @@ function GenStr(str, x, y, obj, sz, rnd, rnd2) {
         console.log("graphic request detected");
         CreateLetter(ar[str], obj, s + x, y) 
     } else { //else string
-         
         //get string
         for(var i=0; i<str.length;i++) {
             var n = str.charCodeAt(i) - 97;
-            if(ar[n]) { s += ar[n].width + sz;
+            if(ar[n]) { 
+                s += (ar[n].width + sz);
                 //console.log("Rendering " + str[i] 
                 //    + " width is " + ar[n].width + " position: " + s);
                 (i == rnd || i == rnd2) ?
@@ -113,8 +113,12 @@ function GenStr(str, x, y, obj, sz, rnd, rnd2) {
                 if(Number.isInteger(t)) {
                     //console.log("its a number: " + t);
                     //console.log("adding space: " + ar[t+26].width + sz*4);
+                    if(ar[t+26].width <= 2) {
+                        s += (ar[t+26].width + sz);
+                    } else {
+                        s += (ar[t+26].width + sz);
+                    }
                     CreateLetter(ar[t+26], obj, s + x, y);
-                    s += ar[t+26].width + sz;
                 } else {
                     s += sz*4;//blank or unknown
                     //console.log("symbol not found "+ str[i] + " charCodeAt: " + n);
@@ -143,7 +147,7 @@ function InitTitle(rnd, rnd2) {
         y: 90,
     });
     //img2.src = URL.createObjectURL(blobArr[28]);
-    GenStr("subspace zero", 0, 0, titleObj, lg, rnd, rnd2);
+    GenStr("subspace zer0", 0, 0, titleObj, lg, rnd, rnd2);
     //GenerateString("abcdefghijklmnopqrstuvwxyz", mdLT, md);
 
 }
